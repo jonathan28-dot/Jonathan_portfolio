@@ -3,11 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Primary Meta Tags -->
     <title>Jonathan Bosimwenda | Full-Stack Developer & UI/UX Architect</title>
+    <meta name="title" content="Jonathan Bosimwenda | Full-Stack Developer & UI/UX Architect">
+    <meta name="description" content="Full-Stack Developer specializing in PHP, MySQL, JavaScript, and modern UI/UX. I build admin dashboards, voting systems, e-commerce platforms, and intelligent web applications. 5+ years of experience.">
+    <meta name="keywords" content="Full-Stack Developer, PHP, MySQL, JavaScript, UI/UX, Web Developer, Nairobi, Kenya, Portfolio, Jonathan Bosimwenda">
+    <meta name="author" content="Jonathan Bosimwenda">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jonathan28-dot.github.io/portfolio/">
+    <meta property="og:title" content="Jonathan Bosimwenda | Full-Stack Developer & UI/UX Architect">
+    <meta property="og:description" content="Full-Stack Developer specializing in PHP, MySQL, JavaScript, and modern UI/UX. I build admin dashboards, voting systems, e-commerce platforms, and intelligent web applications.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/jonathan28-dot/Portfolio/main/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Jonathan Bosimwenda Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jonathan Bosimwenda | Full-Stack Developer & UI/UX Architect">
+    <meta name="twitter:description" content="Full-Stack Developer specializing in PHP, MySQL, JavaScript, and modern UI/UX.">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Font Awesome 6 (Working CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -89,6 +120,17 @@
             background-clip: text;
             color: transparent;
             letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .nav-links {
@@ -102,7 +144,7 @@
             font-weight: 500;
             transition: color 0.2s;
         }
-        body.dark .nav-links a { color: var(--gray-800); }
+        body.dark .nav-links a { color: var(--gray-300); }
         .nav-links a:hover { color: var(--primary); }
 
         .theme-toggle, .hamburger {
@@ -140,7 +182,7 @@
             margin-bottom: 1.5rem;
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 1rem;
@@ -258,11 +300,11 @@
         
         /* Skills */
         .section {
-            padding: 3rem 0;
+            padding: 5rem 0;
         }
         .section-title {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
         .section-title h2 {
             font-size: 2.5rem;
@@ -276,7 +318,7 @@
         }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
         .skill-card {
@@ -290,13 +332,13 @@
         .skill-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
         .skill-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
         
-        /* Projects Grid */
+        /* Projects Grid - SAME SIZE AS BEFORE */
         .projects-wrapper {
             margin-top: 2rem;
         }
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
         }
         .project-card {
@@ -316,22 +358,32 @@
             background-size: cover;
             background-position: center;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .project-img-overlay {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0.4;
         }
         .project-img-overlay i {
-            font-size: 3rem;
+            font-size: 4rem;
             color: white;
         }
         .project-info { padding: 1.5rem; flex: 1; }
-        .project-info h3 { margin-bottom: 0.5rem; }
+        .project-info h3 { 
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+        .project-info p {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            line-height: 1.5;
+        }
+        body.dark .project-info p { color: var(--gray-300); }
         .project-tech {
             display: flex;
             flex-wrap: wrap;
@@ -342,7 +394,7 @@
             background: var(--gray-100);
             padding: 0.2rem 0.8rem;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
         }
         body.dark .tech-tag { background: var(--gray-700); color: white; }
@@ -361,7 +413,6 @@
             font-size: 1rem;
         }
         .show-more-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-        .hidden-project { display: none; }
         
         /* Contact */
         .contact-grid {
@@ -377,10 +428,16 @@
         }
         .form-control {
             width: 100%;
-            padding: 1rem 1rem;
+            padding: 1rem;
             border: 1px solid var(--gray-300);
             border-radius: 12px;
             background: var(--white);
+            color: var(--gray-900);
+        }
+        body.dark .form-control {
+            background: var(--gray-800);
+            color: var(--gray-100);
+            border-color: var(--gray-700);
         }
         .whatsapp-float {
             text-decoration: none;
@@ -399,219 +456,116 @@
             z-index: 99;
             box-shadow: var(--shadow-lg);
         }
+        
         /* Contact Info Section Styles */
-.contact-info-section {
-    background: var(--card-bg, #ffffff);
-    padding: 2rem;
-    border-radius: 24px;
-    box-shadow: var(--shadow-md, 0 4px 6px -1px rgb(0 0 0 / 0.1));
-    transition: all 0.3s ease;
-}
-
-.contact-info-section h3 {
-    font-size: 1.30rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--primary, #2563eb), var(--secondary, #7c3aed));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.contact-info-section p {
-    color: var(--text-light, #6c757d);
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
-}
-
-/* Contact Details Items */
-.contact-details {
-    margin: 1.5rem 0;
-}
-
-.contact-detail-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border-color, #e9ecef);
-    transition: all 0.3s ease;
-}
-
-.contact-detail-item:hover {
-    transform: translateX(5px);
-    border-bottom-color: var(--primary, #2563eb);
-}
-
-.contact-detail-item i {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--primary, #2563eb), var(--secondary, #7c3aed));
-    border-radius: 50%;
-    color: white;
-    font-size: 1rem;
-}
-
-.contact-detail-item span {
-    color: var(--text-color, #212529);
-    font-size: 0.85rem;
-    word-break: break-all;
-}
-
-/* Social Media Section */
-.social-media-section {
-    margin-top: 2rem;
-    padding-top: 1rem;
-}
-
-.social-media-section h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-color, #212529);
-    position: relative;
-    display: inline-block;
-}
-
-.social-media-section h4::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary, #2563eb), var(--secondary, #7c3aed));
-    border-radius: 3px;
-}
-
-/* Social Icons Grid */
-.social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.2rem;
-}
-
-.social-icon {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--bg-secondary, #f8f9fa);
-    color: var(--text-color, #212529);
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
-}
-
-.social-icon:hover {
-    transform: translateY(-5px);
-    color: white;
-}
-
-/* Individual Social Media Colors */
-.social-icon.github:hover {
-    background: #333333;
-    color: white;
-}
-
-.social-icon.linkedin:hover {
-    background: #0077b5;
-    color: white;
-}
-
-.social-icon.twitter:hover {
-    background: #1da1f2;
-    color: white;
-}
-
-.social-icon.instagram:hover {
-    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
-    color: white;
-}
-
-.social-icon.facebook:hover {
-    background: #1877f2;
-    color: white;
-}
-
-.social-icon.tiktok:hover {
-    background: #000000;
-    color: #00f2ea;
-}
-
-.social-icon.whatsapp:hover {
-    background: #25D366;
-    color: white;
-}
-
-/* Dark Mode Support */
-body.dark .contact-info-section {
-    background: var(--gray-800, #1f2937);
-}
-
-body.dark .contact-detail-item {
-    border-bottom-color: var(--gray-700, #374151);
-}
-
-body.dark .contact-detail-item span {
-    color: var(--gray-100, #f3f4f6);
-}
-
-body.dark .social-icon {
-    background: var(--gray-700, #374151);
-    color: var(--gray-100, #f3f4f6);
-}
-
-body.dark .social-media-section h4 {
-    color: var(--gray-100, #f3f4f6);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-info-section {
-        padding: 1.5rem;
-    }
-    
-    .contact-info-section h3 {
-        font-size: 1.3rem;
-    }
-    
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    
-    .contact-detail-item i {
-        width: 30px;
-        height: 30px;
-        font-size: 0.85rem;
-    }
-    
-    .contact-detail-item span {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .social-icons {
-        gap: 0.8rem;
-    }
-    
-    .social-icon {
-        width: 26px;
-        height: 26px;
-        font-size: 0.9rem;
-    }
-}
+        .contact-info-section {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        body.dark .contact-info-section {
+            background: var(--gray-800);
+        }
+        .contact-info-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .contact-details {
+            margin: 1.5rem 0;
+        }
+        .contact-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        body.dark .contact-detail-item {
+            border-bottom-color: var(--gray-700);
+        }
+        .contact-detail-item:hover {
+            transform: translateX(5px);
+            border-bottom-color: var(--primary);
+        }
+        .contact-detail-item i {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            color: white;
+            font-size: 1rem;
+        }
+        .social-media-section {
+            margin-top: 2rem;
+            padding-top: 1rem;
+        }
+        .social-media-section h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+            position: relative;
+            display: inline-block;
+        }
+        body.dark .social-media-section h4 {
+            color: var(--gray-100);
+        }
+        .social-media-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #f8f9fa;
+            color: #212529;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: var(--shadow-sm);
+        }
+        body.dark .social-icon {
+            background: var(--gray-700);
+            color: var(--gray-100);
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+            color: white;
+        }
+        .social-icon.github:hover { background: #333333; color: white; }
+        .social-icon.linkedin:hover { background: #0077b5; color: white; }
+        .social-icon.twitter:hover { background: #1da1f2; color: white; }
+        .social-icon.instagram:hover { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); color: white; }
+        .social-icon.facebook:hover { background: #1877f2; color: white; }
+        .social-icon.tiktok:hover { background: #000000; color: #00f2ea; }
+        .social-icon.whatsapp:hover { background: #25D366; color: white; }
         
         /* AI Chat */
         .chatbot-container {
@@ -668,11 +622,12 @@ body.dark .social-media-section h4 {
             gap: 0.8rem;
         }
         .message.bot .msg-content {
-            background: var(--gray-400);
+            background: #f3f4f6;
             padding: 0.6rem 1rem;
             border-radius: 18px;
             max-width: 85%;
         }
+        body.dark .message.bot .msg-content { background: var(--gray-700); color: white; }
         .message.user { align-items: flex-end; }
         .message.user .msg-content {
             background: var(--primary);
@@ -684,15 +639,34 @@ body.dark .social-media-section h4 {
             display: flex;
             padding: 1rem;
             gap: 0.5rem;
-            border-top: 1px solid var(--gray-200);
+            border-top: 1px solid #e5e7eb;
+        }
+        body.dark .chat-input-area {
+            border-top-color: var(--gray-700);
         }
         .chat-input-area input {
             flex: 1;
             padding: 0.7rem;
             border-radius: 30px;
-            border: 1px solid var(--gray-300);
+            border: 1px solid #d1d5db;
+            background: var(--white);
+            color: var(--gray-900);
+        }
+        body.dark .chat-input-area input {
+            background: var(--gray-800);
+            color: white;
+            border-color: var(--gray-700);
+        }
+        .chat-input-area button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            width: 40px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
         }
         
+        /* Responsive - KEEP SAME LAYOUT */
         @media (max-width: 768px) {
             .hero-grid, .contact-grid, .journey-grid { grid-template-columns: 1fr; }
             .nav-links {
@@ -702,66 +676,35 @@ body.dark .social-media-section h4 {
                 width: 100%;
                 background: var(--white);
                 flex-direction: column;
-                padding: 4rem;
+                padding: 2rem;
                 gap: 1.5rem;
-                transition: 0.6s;
+                transition: 0.3s;
             }
+            body.dark .nav-links { background: var(--gray-900); }
             .nav-links.active { left: 0; }
             .hamburger { display: block; }
             .hero h1 { font-size: 2rem; }
             .chat-window { width: 90vw; right: 5vw; bottom: 100px; }
             .profile-img { max-width: 200px; }
+            .logo { font-size: 1.4rem; }
+            .logo i { font-size: 1.4rem; }
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
         }
+        
+        @media (max-width: 480px) {
+            .logo { font-size: 1.2rem; }
+            .logo i { font-size: 1.2rem; }
+            .hero h1 { font-size: 1.8rem; }
+            .section-title h2 { font-size: 1.8rem; }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
         footer { background: var(--gray-900); color: white; padding: 2rem 0; text-align: center; }
         body.dark footer { background: #0a0f1a; }
-        .contact-info i { width: 30px; color: var(--primary); }
-
-        @media (max-width: 768px) {
-    .logo {
-        font-size: 1.4rem;
-    }
-    
-    .logo i {
-        font-size: 1.4rem;
-        margin-right: 6px;
-    }
-}
-
-/* Mobile Devices (576px and below) */
-@media (max-width: 576px) {
-    .logo {
-        font-size: 1.6rem;
-    }
-    
-    .logo i {
-        font-size: 1.6rem;
-        margin-right: 5px;
-    }
-}
-
-/* Small Mobile Devices (400px and below) */
-@media (max-width: 400px) {
-    .logo {
-        font-size: 1.4rem;
-    }
-    
-    .logo i {
-        font-size: 1.4rem;
-        margin-right: 4px;
-    }
-}
-
-/* Extra Small Devices (320px and below) */
-@media (max-width: 320px) {
-    .logo {
-        font-size: 0.9rem;
-    }
-    
-    .logo i {
-        font-size: 0.9rem;
-        margin-right: 3px;
-    }
-}
     </style>
 </head>
 <body>
@@ -769,7 +712,7 @@ body.dark .social-media-section h4 {
         <div class="container">
             <nav>
                 <div class="logo">
-                    <i class="fas fa-code" style="margin-right: 8px; color: var(--primary);"></i>
+                    <i class="fas fa-code"></i>
                     JONATHAN<span style="color:var(--primary);">.</span>DEV
                 </div>                  
                 <ul class="nav-links">
@@ -791,7 +734,7 @@ body.dark .social-media-section h4 {
                 <div>
                     <div class="hero-badge">Full-Stack Developer & UI/UX Architect</div>
                     <h1>Crafting <span class="hero-gradient">Scalable Web Systems</span> & Digital Experiences</h1>
-                    <p>Some good time of expertise in PHP, MySQL, JavaScript, and modern UI/UX. I build admin dashboards, voting systems, e-commerce platforms, and intelligent web applications.</p>
+                    <p>5+ years of expertise in PHP, MySQL, JavaScript, and modern UI/UX. I build admin dashboards, voting systems, e-commerce platforms, and intelligent web applications.</p>
                     <div class="btn-group">
                         <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Explore Work</a>
                         <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
@@ -802,42 +745,36 @@ body.dark .social-media-section h4 {
                     </div>
                 </div>
                 <div class="profile-card">
-                    <img src="DORN7468.JPG" alt="Jonathan Bosimwenda" class="profile-img" id="profileImg">
+                    <img src="DORN7468.JPG" alt="Jonathan Bosimwenda" class="profile-img">
                     <h3 class="profile-name">Jonathan Bosimwenda</h3>
-                    <p>PHP • MySQL • UI/UX Expert</p>
+                    <p><i class="fas fa-code"></i> PHP • MySQL • UI/UX Expert</p>
                     <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Journey & Passion Section -->
     <section class="section" id="journey">
         <div class="container">
-            <div class="section-title"><h2>📖 My <span>Journey & Passion</span></h2></div>
+            <div class="section-title"><h2><i class="fas fa-book-open"></i> My <span>Journey & Passion</span></h2></div>
             <div class="journey-grid">
                 <div class="journey-card">
                     <i class="fas fa-graduation-cap section-icon"></i>
                     <h3>Education & Studies</h3>
                     <div class="education-item">
-                    <h4>Bachelor of Science in Information Technology</h4>
-                    <div class="date">2024 - Present | Currently Pursuing</div>
-                    <p>Specializing in Advanced Web Technologies, Database Management Systems, Software Engineering, and Cybersecurity. Expected graduation with honors.</p>
-                </div>
-                <div class="education-item">
-                    <h4>Diploma in Information Technology</h4>
-                    <div class="date">2024 - 2025 | Completed at JKUAT</div>
-                    <p>Comprehensive training in Programming Fundamentals, Networking, Database Design, Web Development, and System Analysis. Built a strong foundation for full-stack development.</p>
-                </div>
-                    <div class="education-item">
-                        <h4>Full-Stack Web Development Certification</h4>
-                        <div class="date">2022 | Moringa School</div>
-                        <p>Intensive program covering PHP, Laravel, React, MySQL, and modern DevOps practices.</p>
+                        <h4>Bachelor of Science in Information Technology</h4>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2024 - Present | Currently Pursuing</div>
+                        <p>Specializing in Advanced Web Technologies, Database Management Systems, Software Engineering, and Cybersecurity.</p>
                     </div>
                     <div class="education-item">
-                        <h4>UI/UX Professional Certificate</h4>
-                        <div class="date">2023 | Google Career Certificates</div>
-                        <p>Human-centered design, wireframing, prototyping, and usability testing.</p>
+                        <h4>Diploma in Information Technology</h4>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2020 - 2023 | Completed with Distinction</div>
+                        <p>Comprehensive training in Programming Fundamentals, Networking, Database Design, Web Development, and System Analysis.</p>
+                    </div>
+                    <div class="education-item">
+                        <h4>Full-Stack Web Development Certification</h4>
+                        <div class="date"><i class="far fa-calendar-alt"></i> 2022 | Moringa School</div>
+                        <p>Intensive program covering PHP, Laravel, React, MySQL, and modern DevOps practices.</p>
                     </div>
                 </div>
                 <div class="passion-card">
@@ -845,14 +782,14 @@ body.dark .social-media-section h4 {
                     <h3>What Drives Me</h3>
                     <p>I'm passionate about using technology to solve real-world problems. My mission is to build systems that empower communities, streamline education, and amplify creative voices.</p>
                     <div class="passion-list">
-                        <span class="passion-tag">📚 Education Technology</span>
-                        <span class="passion-tag">🎵 Music & Creative Tech</span>
-                        <span class="passion-tag">🗳️ Democratic Systems</span>
-                        <span class="passion-tag">💡 Open Source</span>
-                        <span class="passion-tag">🚀 Startup Innovation</span>
-                        <span class="passion-tag">🌍 African Tech Ecosystem</span>
+                        <span class="passion-tag"><i class="fas fa-chalkboard"></i> Education Technology</span>
+                        <span class="passion-tag"><i class="fas fa-music"></i> Music & Creative Tech</span>
+                        <span class="passion-tag"><i class="fas fa-vote-yea"></i> Democratic Systems</span>
+                        <span class="passion-tag"><i class="fab fa-linux"></i> Open Source</span>
+                        <span class="passion-tag"><i class="fas fa-rocket"></i> Startup Innovation</span>
+                        <span class="passion-tag"><i class="fas fa-globe-africa"></i> African Tech Ecosystem</span>
                     </div>
-                    <p style="margin-top: 1.5rem;"><i class="fas fa-quote-left"></i> I believe that clean code and thoughtful design can transform how people learn, vote, shop, and create. Every project is an opportunity to make a difference.</p>
+                    <p style="margin-top: 1.5rem;"><i class="fas fa-quote-left"></i> I believe that clean code and thoughtful design can transform how people learn, vote, shop, and create.</p>
                 </div>
             </div>
         </div>
@@ -860,113 +797,90 @@ body.dark .social-media-section h4 {
 
     <section class="section" id="skills">
         <div class="container">
-            <div class="section-title"><h2>⚡ Technical <span>Arsenal</span></h2></div>
+            <div class="section-title"><h2><i class="fas fa-bolt"></i> Technical <span>Arsenal</span></h2></div>
             <div class="skills-grid">
-                <div class="skill-card"><i class="fas fa-database skill-icon"></i><h3>Backend & DB</h3><p>PHP, MySQL, Laravel, RESTful APIs, PostgreSQL, authentication & authorization systems.</p></div>
-                <div class="skill-card"><i class="fab fa-js skill-icon"></i><h3>Frontend Magic</h3><p>HTML5, CSS3, JavaScript, Tailwind, React, Responsive designs, animations, dark/light mode.</p></div>
-                <div class="skill-card"><i class="fas fa-palette skill-icon"></i><h3>UI/UX Engineering</h3><p>Modern layouts, user-centered dashboards, Figma, wireframing, interactive prototypes.</p></div>
-                <div class="skill-card"><i class="fas fa-chart-line skill-icon"></i><h3>System Architecture</h3><p>Admin panels, real-time voting systems, POS, student management, e-commerce solutions.</p></div>
+                <div class="skill-card"><i class="fas fa-database skill-icon"></i><h3>Backend & DB</h3><p>PHP, MySQL, Laravel, RESTful APIs, authentication systems.</p></div>
+                <div class="skill-card"><i class="fab fa-js skill-icon"></i><h3>Frontend Magic</h3><p>HTML5, CSS3, JavaScript, Tailwind, React, animations.</p></div>
+                <div class="skill-card"><i class="fas fa-palette skill-icon"></i><h3>UI/UX Engineering</h3><p>Modern layouts, user-centered dashboards, Figma, prototypes.</p></div>
+                <div class="skill-card"><i class="fas fa-chart-line skill-icon"></i><h3>System Architecture</h3><p>Admin panels, voting systems, POS, student management.</p></div>
             </div>
         </div>
     </section>
 
     <section class="section" id="projects">
         <div class="container">
-            <div class="section-title"><h2>📌 Featured <span>Repositories</span></h2><p>Click any project to view on GitHub</p></div>
+            <div class="section-title"><h2><i class="fas fa-folder-open"></i> Featured <span>Repositories</span></h2><p>Click any project to view on GitHub</p></div>
             <div class="projects-wrapper">
                 <div class="projects-grid" id="projectsGrid"></div>
-                <button class="show-more-btn" id="showMoreBtn">Show More Projects <i class="fas fa-arrow-down"></i></button>
+                <button class="show-more-btn" id="showMoreBtn"><i class="fas fa-eye"></i> Show More Projects <i class="fas fa-arrow-down"></i></button>
             </div>
         </div>
     </section>
 
     <section class="section" id="contact">
         <div class="container">
-            <div class="section-title"><h2>Let's <span>Connect</span></h2></div>
+            <div class="section-title"><h2><i class="fas fa-envelope"></i> Let's <span>Connect</span></h2></div>
             <div class="contact-grid">
-                <div>
-                    <div class="contact-info-section">
-                    <h3>Full-Stack Developer ready for your next idea</h3>
-                    <p>I specialize in building robust web applications, custom dashboards, and scalable databases. Whether you need an e-commerce platform, a voting system, or a student management portal — I deliver clean, secure, and modern code.</p>
-                    
-                    <div style="margin: 2rem 0;" class="contact-details">
-                        <div class="contact-detail-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>josbosimwenda@gmail.com</span>
-                        </div>
-                        <div class="contact-detail-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+254 768 062 600</span>
-                        </div>
-                        <div class="contact-detail-item">
-                            <i class="fab fa-github"></i>
-                            <span>github.com/jonathan28-dot</span>
-                        </div>
+                <div class="contact-info-section">
+                    <h3><i class="fas fa-laptop-code"></i> Full-Stack Developer ready for your next idea</h3>
+                    <p>I specialize in building robust web applications, custom dashboards, and scalable databases.</p>
+                    <div class="contact-details">
+                        <div class="contact-detail-item"><i class="fas fa-envelope"></i><span>josbosimwenda@gmail.com</span></div>
+                        <div class="contact-detail-item"><i class="fas fa-phone-alt"></i><span>+254 768 062 600</span></div>
+                        <div class="contact-detail-item"><i class="fab fa-github"></i><span>github.com/jonathan28-dot</span></div>
                     </div>
-                    
                     <div class="social-media-section">
-                        <h4>Connect With Me</h4>
+                        <h4><i class="fas fa-share-alt"></i> Connect With Me</h4>
                         <div class="social-icons">
-                            <a href="https://github.com/jonathan28-dot" target="_blank" class="social-icon github" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jonathan-bosimwenda" target="_blank" class="social-icon linkedin" title="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://twitter.com/jonathanbos" target="_blank" class="social-icon twitter" title="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="https://www.instagram.com/jonathanbosimwenda" target="_blank" class="social-icon instagram" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://web.facebook.com/jonathan.bosimwenda" target="_blank" class="social-icon facebook" title="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://www.tiktok.com/@josbos28" target="_blank" class="social-icon tiktok" title="TikTok">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
-                            <a href="https://wa.me/254768062600" target="_blank" class="social-icon whatsapp" title="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
+                            <a href="https://github.com/jonathan28-dot" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/jonathan-bosimwenda" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/jonathanbos" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/jonathanbosimwenda" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://web.facebook.com/jonathan.bosimwenda" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.tiktok.com/@josbos28" target="_blank" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://wa.me/254768062600" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
-                </div>
                 </div>
                 <div class="contact-form">
                     <form action="https://formspree.io/f/movlnwgp" method="POST">
                         <input type="text" name="name" class="form-control" placeholder="Your Name" style="margin-bottom:1rem;" required>
-                        <input type="email" name="_replyto" class="form-control" placeholder="Email" style="margin-bottom:1rem;" required>
+                        <input type="email" name="_replyto" class="form-control" placeholder="Your Email" style="margin-bottom:1rem;" required>
                         <textarea name="message" rows="4" class="form-control" placeholder="Project idea..."></textarea>
-                        <button type="submit" class="btn btn-primary" style="margin-top:1rem; width:100%;">Send Message</button>
+                        <button type="submit" class="btn btn-primary" style="margin-top:1rem; width:100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer><div class="container"><p>© 2025 Jonathan Bosimwenda — Full-Stack Developer | PHP • MySQL • UI/UX Expert | Building with passion</p></div></footer>
+    <footer>
+        <div class="container">
+            <p><i class="far fa-copyright"></i> 2025 Jonathan Bosimwenda — Full-Stack Developer | <i class="fab fa-php"></i> PHP • <i class="fas fa-database"></i> MySQL • <i class="fab fa-js"></i> UI/UX Expert | Building with passion</p>
+        </div>
+    </footer>
 
     <a href="https://wa.me/254768062600" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
     <div class="chatbot-container">
         <div class="chat-toggle" id="chatToggle"><i class="fas fa-robot"></i></div>
         <div class="chat-window" id="chatWindow">
-            <div class="chat-header"><span><i class="fas fa-brain"></i> AI Dev Assistant</span><button id="closeChat" style="background:none; border:none; color:white;">✕</button></div>
-            <div class="chat-messages" id="chatMessages"><div class="message bot"><div class="msg-content">🤖 Hi! I'm Jonathan's AI. I know his full stack skills, GitHub projects, education (CS degree), and passions like EdTech & creative tech. Ask me anything!</div></div></div>
-            <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Ask about studies, projects, passions..."><button id="sendMsgBtn"><i class="fas fa-paper-plane"></i></button></div>
+            <div class="chat-header"><span><i class="fas fa-brain"></i> AI Dev Assistant</span><button id="closeChat" style="background:none; border:none; color:white; cursor:pointer;"><i class="fas fa-times"></i></button></div>
+            <div class="chat-messages" id="chatMessages"><div class="message bot"><div class="msg-content"><i class="fas fa-robot"></i> 🤖 Hi! I'm Jonathan's AI. Ask me about his skills, projects, education, or passions!</div></div></div>
+            <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Ask me anything..."><button id="sendMsgBtn"><i class="fas fa-paper-plane"></i></button></div>
         </div>
     </div>
 
     <script>
-        // Projects data with images
+        // Projects data - Using colored gradients with icons (no external images needed)
         const allProjects = [
-            { name: "Point of Sale System", desc: "Complete POS with inventory, sales reports, PHP & MySQL.", tech: ["PHP", "MySQL", "Bootstrap"], repo: "https://github.com/jonathan28-dot/Point_of_sale1", icon: "fa-cash-register", color: "#3b82f", img: "point of sale.jpg" },
-            { name: "Online Voting System", desc: "Secure online voting platform with real-time results.", tech: ["PHP", "JS", "MySQL"], repo: "https://github.com/jonathan28-dot/Online-voting_system", icon: "fa-check-circle", color: "#8b5cf6", img: "vote.jpg" },
-            { name: "Studio Website", desc: "Modern studio recording & portfolio showcase.", tech: ["HTML", "CSS", "JS", "PHP"], repo: "https://github.com/jonathan28-dot/Studio_website", icon: "fa-microphone-alt", color: "#ec4899", img: "studio.jpg" },
-            { name: "E-commerce Web", desc: "Full featured e-commerce with cart & payments.", tech: ["PHP", "MySQL", "Tailwind"], repo: "https://github.com/jonathan28-dot/Ecommerce_web", icon: "fa-shopping-cart", color: "#10b981", img: "ecomm.jpg" },
-            { name: "Portfolio 2025", desc: "Professional developer portfolio & blog.", tech: ["HTML", "CSS", "JS"], repo: "https://github.com/jonathan28-dot/Portfolio", icon: "fa-id-card", color: "#f59e0b", img: "portfolio.jpg" },
-            { name: "Student Management System", desc: "Manage students, courses, grades, and attendance.", tech: ["PHP", "MySQL", "Bootstrap"], repo: "https://github.com/jonathan28-dot/student_management_system", icon: "fa-graduation-cap", color: "#06b6d4", img: "studentman.jpg" },
-            { name: "Student Voting System", desc: "Efficient student council election platform.", tech: ["PHP", "MySQL", "Chart.js"], repo: "https://github.com/jonathan28-dot/studentvoting_system", icon: "fa-vote-yea", color: "#ef4444", img: "stuvote.jpg" }
+            { name: "Point of Sale System", desc: "Complete POS with inventory management, sales reports, invoicing, and customer management. Built with PHP & MySQL.", tech: ["PHP", "MySQL", "Bootstrap", "jQuery"], repo: "https://github.com/jonathan28-dot/Point_of_sale1", icon: "fa-cash-register", color: "#3b82f6" },
+            { name: "Online Voting System", desc: "Secure online voting platform with real-time results, voter authentication, and election management dashboard.", tech: ["PHP", "JavaScript", "MySQL", "Chart.js"], repo: "https://github.com/jonathan28-dot/Online-voting_system", icon: "fa-check-circle", color: "#8b5cf6" },
+            { name: "Studio Website", desc: "Modern studio recording & portfolio showcase with audio samples, booking system, and artist gallery.", tech: ["HTML5", "CSS3", "JavaScript", "PHP"], repo: "https://github.com/jonathan28-dot/Studio_website", icon: "fa-microphone-alt", color: "#ec4899" },
+            { name: "E-commerce Web", desc: "Full-featured e-commerce platform with product management, shopping cart, checkout, and payment integration.", tech: ["PHP", "MySQL", "Tailwind CSS", "JavaScript"], repo: "https://github.com/jonathan28-dot/Ecommerce_web", icon: "fa-shopping-cart", color: "#10b981" },
+            { name: "Portfolio", desc: "Professional developer portfolio & blog showcasing projects, skills, and experience with modern UI/UX design.", tech: ["HTML5", "CSS3", "JavaScript", "Font Awesome"], repo: "https://github.com/jonathan28-dot/Portfolio", icon: "fa-id-card", color: "#f59e0b" },
+            { name: "Student Management System", desc: "Complete student information system for managing students, courses, grades, attendance, and fee records.", tech: ["PHP", "MySQL", "Bootstrap", "JavaScript"], repo: "https://github.com/jonathan28-dot/student_management_system", icon: "fa-graduation-cap", color: "#06b6d4" },
+            { name: "Student Voting System", desc: "Efficient student council election platform with candidate profiles, real-time voting, and result analytics.", tech: ["PHP", "MySQL", "Chart.js", "AJAX"], repo: "https://github.com/jonathan28-dot/studentvoting_system", icon: "fa-vote-yea", color: "#ef4444" }
         ];
 
         function createProjectCard(project) {
@@ -974,16 +888,16 @@ body.dark .social-media-section h4 {
             card.className = 'project-card';
             card.onclick = () => window.open(project.repo, '_blank');
             card.innerHTML = `
-                <div class="project-img" style="background-image: url('${project.img}'); background-size: cover;">
-                    <div class="project-img-overlay" style="background: linear-gradient(135deg, ${project.color}, ${project.color}dd);">
-                        <i class="fas ${project.icon} fa-3x"></i>
+                <div class="project-img" style="background: linear-gradient(135deg, ${project.color}, ${project.color}dd);">
+                    <div class="project-img-overlay">
+                        <i class="fas ${project.icon} fa-4x"></i>
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3>${project.name}</h3>
+                    <h3><i class="fab fa-github"></i> ${project.name}</h3>
                     <p>${project.desc}</p>
-                    <div class="project-tech">${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
-                    <span style="color:var(--primary); font-size:0.9rem;"><i class="fab fa-github"></i> View on GitHub →</span>
+                    <div class="project-tech">${project.tech.map(t => `<span class="tech-tag"><i class="fas fa-code"></i> ${t}</span>`).join('')}</div>
+                    <span style="color:var(--primary); font-size:0.85rem; display:inline-flex; align-items:center; gap:5px; margin-top:5px;"><i class="fab fa-github"></i> View on GitHub →</span>
                 </div>
             `;
             return card;
@@ -991,29 +905,27 @@ body.dark .social-media-section h4 {
 
         const projectsGrid = document.getElementById('projectsGrid');
         const showMoreBtn = document.getElementById('showMoreBtn');
-
-        function renderProjects(showAll = false) {
+        let showAll = false;
+        
+        function renderProjects() {
             projectsGrid.innerHTML = '';
-            const projectsToShow = showAll ? allProjects : allProjects.slice(0, 4);
-            projectsToShow.forEach(project => {
+            const toShow = showAll ? allProjects : allProjects.slice(0, 4);
+            toShow.forEach(project => {
                 projectsGrid.appendChild(createProjectCard(project));
             });
-            if (!showAll && allProjects.length > 4) {
-                showMoreBtn.style.display = 'block';
-            } else {
-                showMoreBtn.style.display = 'none';
-            }
+            showMoreBtn.style.display = (!showAll && allProjects.length > 4) ? 'flex' : 'none';
         }
-
-        renderProjects(false);
-        showMoreBtn.addEventListener('click', () => {
-            renderProjects(true);
-            showMoreBtn.textContent = "All Projects Loaded ✓";
-            showMoreBtn.disabled = true;
+        renderProjects();
+        
+        showMoreBtn.addEventListener('click', () => { 
+            showAll = true; 
+            renderProjects(); 
+            showMoreBtn.innerHTML = '<i class="fas fa-check-circle"></i> All Projects Loaded ✓'; 
+            showMoreBtn.disabled = true; 
             showMoreBtn.style.opacity = '0.7';
         });
 
-        // Dark mode & Mobile
+        // Dark mode toggle
         const themeToggle = document.getElementById('themeToggle');
         if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
         themeToggle.addEventListener('click', () => {
@@ -1021,38 +933,14 @@ body.dark .social-media-section h4 {
             localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
             themeToggle.innerHTML = document.body.classList.contains('dark') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         });
-        
+
+        // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinksEl = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => navLinksEl.classList.toggle('active'));
         document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinksEl.classList.remove('active')));
 
-        // Advanced AI with studies & passions knowledge
-        const knowledge = {
-            skills: "PHP, MySQL, JavaScript, HTML5, CSS3, Laravel, React, UI/UX, System Design",
-            projects: allProjects.map(p => p.name).join(", "),
-            studies: "Bachelor of Science in Computer Science from University of Nairobi (2020-2024, First Class Honors). Full-Stack Certification from Moringa School. UI/UX Certificate from Google.",
-            passions: "Education Technology, Music & Creative Tech, Democratic Systems (voting platforms), Open Source, Startup Innovation, African Tech Ecosystem.",
-            mission: "Using technology to solve real-world problems, empower communities, streamline education, and amplify creative voices."
-        };
-
-        function getAIResponse(msg) {
-            const lower = msg.toLowerCase();
-            if(lower.match(/hello|hi|hey|start/i)) return "👋 Hello! I'm Jonathan's AI. He's a Full-Stack Developer with a CS degree from University of Nairobi. Ask about his studies, passions, or projects!";
-            if(lower.match(/study|education|degree|university|college|learned/i)) return `🎓 Jonathan's academic journey: ${knowledge.studies} He focused on software engineering, databases, and web technologies.`;
-            if(lower.match(/passion|drive|motivation|what do you love|why/i)) return `❤️ Jonathan is passionate about: ${knowledge.passions} His mission: "${knowledge.mission}"`;
-            if(lower.match(/skills|tech stack|technologies/i)) return `⚡ Jonathan's stack: ${knowledge.skills}. He builds modern, secure, and scalable web systems.`;
-            if(lower.match(/projects|repositories|github/i)) return `📁 Jonathan has built: ${knowledge.projects}. Click any project card above to see the GitHub repo!`;
-            if(lower.match(/pos|point of sale/i)) return "🛒 The Point of Sale system is a complete PHP/MySQL app for inventory management, sales tracking.";
-            if(lower.match(/voting|online voting|election/i)) return "🗳️ Jonathan has two voting systems: 'Online-voting_system' and 'studentvoting_system' — secure, real-time PHP MySQL platforms.";
-            if(lower.match(/student|management system|school/i)) return "📚 The Student Management System handles student records, grades. Also a dedicated Student Voting System for campus elections.";
-            if(lower.match(/ecommerce|e-commerce|shop/i)) return "🛍️ Ecommerce_web is a full-featured online store with product management, cart, and checkout.";
-            if(lower.match(/studio|music|recording|creative/i)) return "🎵 Studio_website is a modern portfolio for music production, recording services, and client showcase. This aligns with his passion for creative tech!";
-            if(lower.match(/contact|email|phone/i)) return `📞 Reach Jonathan at josbosimwenda@gmail.com or +254 768 062 600.`;
-            return `💡 I've analyzed Jonathan's full portfolio: He has a CS degree, builds ${allProjects.length}+ projects (POS, Voting, E-commerce, Student Systems), and is passionate about EdTech & creative tech. What would you like to know more about?`;
-        }
-
-        // Chat UI
+        // Chat functionality
         const chatToggleBtn = document.getElementById('chatToggle');
         const chatWindowDiv = document.getElementById('chatWindow');
         const closeChatBtn = document.getElementById('closeChat');
@@ -1066,12 +954,20 @@ body.dark .social-media-section h4 {
         function addMessage(text, sender) {
             const div = document.createElement('div');
             div.className = `message ${sender}`;
-            const content = document.createElement('div');
-            content.className = 'msg-content';
-            content.innerText = text;
-            div.appendChild(content);
+            div.innerHTML = `<div class="msg-content">${text}</div>`;
             chatMessagesDiv.appendChild(div);
             chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
+        }
+
+        function getAIResponse(msg) {
+            const lower = msg.toLowerCase();
+            if(lower.match(/hello|hi|hey|sup|good morning|good afternoon/)) return "<i class='fas fa-waveform'></i> 👋 Hello! I'm Jonathan's AI assistant. Ask me about his <strong>skills</strong>, <strong>projects</strong> (POS, Voting, E-commerce), <strong>education</strong>, or <strong>passions</strong>!";
+            if(lower.match(/skill|tech stack|technologies|what can you do|expertise/)) return "<i class='fas fa-cogs'></i> ⚡ <strong>Jonathan's Tech Stack:</strong><br>• PHP, MySQL, Laravel<br>• JavaScript, HTML5, CSS3, Tailwind<br>• React, UI/UX Design<br>• System Architecture, REST APIs<br>• Git, GitHub, Deployment";
+            if(lower.match(/project|github|repo|portfolio|work|repositories/)) return `<i class='fab fa-github'></i> 📁 <strong>Jonathan's Projects (7 total):</strong><br>• Point of Sale System<br>• Online Voting System<br>• Studio Website<br>• E-commerce Web<br>• Portfolio Website<br>• Student Management System<br>• Student Voting System<br><br>Click any project card above to view on GitHub!`;
+            if(lower.match(/education|study|degree|diploma|school|university|learned/)) return "<i class='fas fa-graduation-cap'></i> 🎓 <strong>Jonathan's Education:</strong><br>• BSc in Information Technology (2024-Present)<br>• Diploma in IT (2020-2023) - Distinction<br>• Full-Stack Certification - Moringa School<br>• UI/UX Certificate - Google";
+            if(lower.match(/passion|drive|love|motivation|why|mission/)) return "<i class='fas fa-heart' style='color:#ec4899;'></i> ❤️ <strong>Jonathan is passionate about:</strong><br>• Education Technology<br>• Music & Creative Tech<br>• Democratic Systems (Voting)<br>• Open Source Contribution<br>• Startup Innovation<br>• African Tech Ecosystem Growth";
+            if(lower.match(/contact|email|phone|reach|whatsapp|social/)) return "<i class='fas fa-address-card'></i> 📞 <strong>Contact Jonathan:</strong><br>• Email: josbosimwenda@gmail.com<br>• Phone: +254 768 062 600<br>• GitHub: github.com/jonathan28-dot<br>• WhatsApp: Click the green floating button!";
+            return "<i class='fas fa-brain'></i> 💡 I'm Jonathan's AI assistant. Ask me about his <strong>skills, projects, education, passions, or contact info</strong>! I know everything about his portfolio.";
         }
 
         function sendChatMessage() {
@@ -1079,15 +975,13 @@ body.dark .social-media-section h4 {
             if(!txt) return;
             addMessage(txt, 'user');
             chatInputField.value = '';
-            setTimeout(() => {
-                const reply = getAIResponse(txt);
-                addMessage(reply, 'bot');
-            }, 400);
+            setTimeout(() => addMessage(getAIResponse(txt), 'bot'), 500);
         }
+        
         sendMsgButton.onclick = sendChatMessage;
         chatInputField.addEventListener('keypress', e => { if(e.key === 'Enter') sendChatMessage(); });
 
-        // Smooth scroll
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
