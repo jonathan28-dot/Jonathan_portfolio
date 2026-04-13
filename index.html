@@ -2,1106 +2,1052 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan Bosimwenda | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Jonathan Bosimwenda | Full-Stack Developer & UI/UX Architect</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #3a86ff;
-            --secondary-color: #8338ec;
-            --text-color: #212529;
-            --text-light: #6c757d;
-            --bg-color: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --card-bg: #ffffff;
-            --border-color: #e9ecef;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .dark-mode {
-            --primary-color: #3a86ff;
-            --secondary-color: #8338ec;
-            --text-color: #f8f9fa;
-            --text-light: #adb5bd;
-            --bg-color: #121212;
-            --bg-secondary: #1e1e1e;
-            --card-bg: #1e1e1e;
-            --border-color: #2d2d2d;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
-        
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --gray-900: #111827;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-300: #d1d5db;
+            --gray-100: #f3f4f6;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.5;
+            transition: background 0.3s, color 0.3s;
         }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            line-height: 1.2;
+
+        body.dark {
+            background-color: var(--dark);
+            color: var(--gray-100);
         }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
+
+        body.dark .card, body.dark .skill-card, body.dark .contact-form, body.dark .chat-window, 
+        body.dark .project-card, body.dark .journey-card, body.dark .passion-card {
+            background-color: var(--gray-800);
+            border-color: var(--gray-700);
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
-        
-        .section {
-            padding: 40px 0;
-        }
-        
-        .section-title {
-            margin-bottom: 60px;
-            text-align: center;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 30px;
-            font-weight: 500;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.3);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(58, 134, 255, 0.4);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            box-shadow: none;
-        }
-        
-        .btn-outline:hover {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            color: white;
-        }
-        
+
         /* Header */
         header {
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            background-color: var(--bg-color);
-            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
+            background: rgba(255,255,255,0.8);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s;
         }
-        
+        body.dark header {
+            background: rgba(15,23,42,0.9);
+            border-bottom-color: rgba(255,255,255,0.05);
+        }
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 1.2rem 0;
         }
-        
+
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-color);
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
         }
-        
-        .logo span {
-            color: var(--primary-color);
-        }
-        
+
         .nav-links {
             display: flex;
+            gap: 2.5rem;
             list-style: none;
         }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
         .nav-links a {
-            color: var(--text-color);
+            text-decoration: none;
+            color: var(--gray-900);
             font-weight: 500;
-            position: relative;
+            transition: color 0.2s;
         }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .theme-toggle {
+        body.dark .nav-links a { color: var(--gray-300); }
+        .nav-links a:hover { color: var(--primary); }
+
+        .theme-toggle, .hamburger {
             background: none;
             border: none;
-            color: var(--text-color);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
-            margin-left: 20px;
+            color: var(--gray-900);
         }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-        
+        body.dark .theme-toggle, body.dark .hamburger { color: var(--gray-100); }
+        .hamburger { display: none; }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
-            background-color: var(--bg-secondary);
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(124,58,237,0.05) 100%);
         }
-        
-        .hero-content {
-            display: flex;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
-            justify-content: space-between;
         }
-        
-        .hero-text {
-            flex: 1;
-            padding-right: 50px;
+        .hero-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
         }
-        
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
         }
-        
-        .hero-text p {
+        .hero p {
             font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 30px;
-            max-width: 600px;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            max-width: 500px;
         }
+        body.dark .hero p { color: var(--gray-300); }
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .stat h3 { font-size: 1.8rem; font-weight: 800; }
         
-        .hero-image {
-            flex: 1;
+        /* Profile Card */
+        .profile-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(255,255,255,0.2);
             text-align: center;
         }
-        
-        .hero-image img {
-            max-width: 100%;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-        }
-        
-        /* About Section */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
+        .profile-img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-        
-        .skills {
-            margin-top: 30px;
-        }
-        
-        .skill-item {
-            margin-bottom: 20px;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background-color: var(--border-color);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 4px;
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-            border: 1px solid var(--border-color);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .portfolio-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-        
-        .portfolio-img {
-            width: 100%;
-            height: 250px;
+            max-width: 280px;
+            height: auto;
+            border-radius: 1.5rem;
             object-fit: cover;
-            transition: transform 0.5s;
+            box-shadow: var(--shadow-lg);
+            border: 3px solid var(--primary);
+        }
+        .profile-name {
+            margin-top: 1rem;
+            font-weight: 700;
+            font-size: 1.5rem;
         }
         
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(58, 134, 255, 0.9) 0%, rgba(131, 56, 236, 0.9) 100%);
+        /* Journey & Passion Section */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .journey-card, .passion-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .journey-card:hover, .passion-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+        .section-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .education-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--primary);
+        }
+        .education-item h4 { font-size: 1.2rem; margin-bottom: 0.3rem; }
+        .education-item .date { font-size: 0.8rem; color: var(--gray-700); margin-bottom: 0.5rem; }
+        body.dark .education-item .date { color: var(--gray-400); }
+        .passion-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .passion-tag {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Skills */
+        .section {
+            padding: 3rem 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .section-title span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .skill-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+        .skill-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
+        
+        /* Projects Grid */
+        .projects-wrapper {
+            margin-top: 2rem;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-            padding: 20px;
-            text-align: center;
-            color: white;
         }
-        
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
+        .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
+        .project-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
-        
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.05);
-        }
-        
-        .portfolio-overlay h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Testimonials */
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .testimonial-item {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-        
-        .testimonial-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 20px;
-            border: 3px solid var(--primary-color);
-        }
-        
-        .testimonial-item p {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-        
-        .testimonial-author h4 {
-            color: var(--text-color);
-            margin-bottom: 5px;
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            gap: 50px;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 30px;
-            color: var(--text-light);
-        }
-        
-        .contact-details {
-            margin-bottom: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 50%;
+        .project-img-overlay {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 100%;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            opacity: 0.4;
+        }
+        .project-img-overlay i {
+            font-size: 3rem;
             color: white;
-            font-size: 1.2rem;
         }
-        
-        .contact-text h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
+        .project-info { padding: 1.5rem; flex: 1; }
+        .project-info h3 { margin-bottom: 0.5rem; }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
         }
+        .tech-tag {
+            background: var(--gray-100);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        body.dark .tech-tag { background: var(--gray-700); color: white; }
         
+        .show-more-btn {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 0.8rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        .show-more-btn:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .hidden-project { display: none; }
+        
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
         .contact-form {
-            flex: 1;
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
         }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
         .form-control {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            padding: 1rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 12px;
+            background: var(--white);
         }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--bg-secondary);
-            padding: 50px 0 20px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            margin-bottom: 30px;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: var(--card-bg);
+        .whatsapp-float {
+            text-decoration: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 10px;
-            color: var(--text-color);
-            transition: all 0.3s;
-            box-shadow: var(--shadow);
-        }
-        
-        .social-link:hover {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            transform: translateY(-5px);
+            font-size: 28px;
+            z-index: 99;
+            box-shadow: var(--shadow-lg);
         }
+        /* Contact Info Section Styles */
+.contact-info-section {
+    background: var(--card-bg, #ffffff);
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md, 0 4px 6px -1px rgb(0 0 0 / 0.1));
+    transition: all 0.3s ease;
+}
+
+.contact-info-section h3 {
+    font-size: 1.30rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--primary, #2563eb), var(--secondary, #7c3aed));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.contact-info-section p {
+    color: var(--text-light, #6c757d);
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Details Items */
+.contact-details {
+    margin: 1.5rem 0;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color, #e9ecef);
+    transition: all 0.3s ease;
+}
+
+.contact-detail-item:hover {
+    transform: translateX(5px);
+    border-bottom-color: var(--primary, #2563eb);
+}
+
+.contact-detail-item i {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary, #2563eb), var(--secondary, #7c3aed));
+    border-radius: 50%;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-detail-item span {
+    color: var(--text-color, #212529);
+    font-size: 0.85rem;
+    word-break: break-all;
+}
+
+/* Social Media Section */
+.social-media-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+.social-media-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color, #212529);
+    position: relative;
+    display: inline-block;
+}
+
+.social-media-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary, #2563eb), var(--secondary, #7c3aed));
+    border-radius: 3px;
+}
+
+/* Social Icons Grid */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-secondary, #f8f9fa);
+    color: var(--text-color, #212529);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm, 0 1px 2px 0 rgb(0 0 0 / 0.05));
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    color: white;
+}
+
+/* Individual Social Media Colors */
+.social-icon.github:hover {
+    background: #333333;
+    color: white;
+}
+
+.social-icon.linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
+.social-icon.twitter:hover {
+    background: #1da1f2;
+    color: white;
+}
+
+.social-icon.instagram:hover {
+    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+    color: white;
+}
+
+.social-icon.facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+.social-icon.tiktok:hover {
+    background: #000000;
+    color: #00f2ea;
+}
+
+.social-icon.whatsapp:hover {
+    background: #25D366;
+    color: white;
+}
+
+/* Dark Mode Support */
+body.dark .contact-info-section {
+    background: var(--gray-800, #1f2937);
+}
+
+body.dark .contact-detail-item {
+    border-bottom-color: var(--gray-700, #374151);
+}
+
+body.dark .contact-detail-item span {
+    color: var(--gray-100, #f3f4f6);
+}
+
+body.dark .social-icon {
+    background: var(--gray-700, #374151);
+    color: var(--gray-100, #f3f4f6);
+}
+
+body.dark .social-media-section h4 {
+    color: var(--gray-100, #f3f4f6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-info-section {
+        padding: 1.5rem;
+    }
+    
+    .contact-info-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .contact-detail-item i {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+    
+    .contact-detail-item span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons {
+        gap: 0.8rem;
+    }
+    
+    .social-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+}
         
-        .copyright {
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-light);
-            font-size: 0.9rem;
+        /* AI Chat */
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            z-index: 1000;
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero-content, .about-content, .contact-content {
-                flex-direction: column;
-            }
-            
-            .hero-text, .about-text, .contact-info {
-                padding-right: 0;
-                margin-bottom: 50px;
-            }
-            
-            .hero-text {
-                order: 2;
-            }
-            
-            .hero-image {
-                order: 1;
-                margin-bottom: 50px;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+        .chat-toggle {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+        }
+        .chat-window {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 360px;
+            height: 500px;
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0);
+            opacity: 0;
+            transition: 0.25s;
+            transform-origin: bottom right;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        .chat-window.open { transform: scale(1); opacity: 1; }
+        .chat-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .message.bot .msg-content {
+            background: var(--gray-100);
+            padding: 0.6rem 1rem;
+            border-radius: 18px;
+            max-width: 85%;
+        }
+        .message.user { align-items: flex-end; }
+        .message.user .msg-content {
+            background: var(--primary);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-radius: 18px;
+        }
+        .chat-input-area {
+            display: flex;
+            padding: 1rem;
+            gap: 0.5rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        .chat-input-area input {
+            flex: 1;
+            padding: 0.6rem;
+            border-radius: 30px;
+            border: 1px solid var(--gray-300);
         }
         
         @media (max-width: 768px) {
+            .hero-grid, .contact-grid, .journey-grid { grid-template-columns: 1fr; }
             .nav-links {
                 position: fixed;
                 top: 80px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
-                background-color: var(--bg-color);
+                background: var(--white);
                 flex-direction: column;
-                align-items: center;
-                padding-top: 50px;
-                transition: left 0.3s;
+                padding: 2rem;
+                gap: 1.5rem;
+                transition: 0.3s;
             }
-            
-            .nav-links.active {
-                left: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav-links.active { left: 0; }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 2rem; }
+            .chat-window { width: 90vw; right: 5vw; bottom: 100px; }
+            .profile-img { max-width: 200px; }
         }
-        
-        @media (max-width: 576px) {
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-            
-            .btn-group {
-                display: flex;
-                flex-direction: column;
-            }
-            
-            .btn-outline {
-                margin-left: 0;
-                margin-top: 15px;
-            }
-        }
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Enhanced Footer */
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: left;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--text-color);
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-        }
-        
-        .footer-column p, .footer-column a {
-            color: var(--text-light);
-            margin-bottom: 10px;
-            display: block;
-        }
-        
-        .footer-column a:hover {
-            color: var(--primary-color);
-        }
-        
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
+        footer { background: var(--gray-900); color: white; padding: 2rem 0; text-align: center; }
+        body.dark footer { background: #0a0f1a; }
+        .contact-info i { width: 30px; color: var(--primary); }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <div class="logo"> Jonathan<span>Bosimwenda</span></div>
+                <div class="logo">
+                    <i class="fas fa-code" style="margin-right: 8px; color: var(--primary);"></i>
+                    JONATHAN<span style="color:var(--primary);">.</span>DEV
+                </div>                  
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">My Works</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#skills">Tech Stack</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hello, I'm Jonathan Bosimwenda</h1>
-                    <p>I'm a passionate Developer dedicated to creating beautiful, functional digital experiences. With a focus on user-centered design and clean code, I bring ideas to life.</p>
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge">Full-Stack Developer & UI/UX Architect</div>
+                    <h1>Crafting <span class="hero-gradient">Scalable Web Systems</span> & Digital Experiences</h1>
+                    <p>5+ years of expertise in PHP, MySQL, JavaScript, and modern UI/UX. I build admin dashboards, voting systems, e-commerce platforms, and intelligent web applications.</p>
                     <div class="btn-group">
-                        <a href="#portfolio" class="btn">View My Work</a>
-                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                        <a href="#projects" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Explore Work</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Hire Me</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat"><h3>12+</h3><p>Full Projects</p></div>
+                        <div class="stat"><h3>100%</h3><p>Client Satisfaction</p></div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="background.jpeg" alt="Jonathan Bosimwenda">
+                <div class="profile-card">
+                    <img src="DORN7468.JPG" alt="Jonathan Bosimwenda" class="profile-img" id="profileImg">
+                    <h3 class="profile-name">Jonathan Bosimwenda</h3>
+                    <p>PHP • MySQL • UI/UX Expert</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
+    <!-- Journey & Passion Section -->
+    <section class="section" id="journey">
         <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="DORN7468.JPG" alt="About Me">
+            <div class="section-title"><h2>📖 My <span>Journey & Passion</span></h2></div>
+            <div class="journey-grid">
+                <div class="journey-card">
+                    <i class="fas fa-graduation-cap section-icon"></i>
+                    <h3>Education & Studies</h3>
+                    <div class="education-item">
+                    <h4>Bachelor of Science in Information Technology</h4>
+                    <div class="date">2024 - Present | Currently Pursuing</div>
+                    <p>Specializing in Advanced Web Technologies, Database Management Systems, Software Engineering, and Cybersecurity. Expected graduation with honors.</p>
                 </div>
-                <div class="about-text">
-                    <h3>Professional Developer</h3>
-                    <p>I specialize in creating exceptional digital experiences that combine beautiful design with seamless functionality. With over 5 years of experience in the industry, I've helped numerous clients bring their visions to life.</p>
-                    <p>My approach combines technical expertise with creative problem-solving, ensuring that every project not only looks stunning but also delivers real results.</p>
-                    
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>UI/UX Design</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Web Development</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Web Design</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%;"></div>
-                            </div>
-                        </div>
+                <div class="education-item">
+                    <h4>Diploma in Information Technology</h4>
+                    <div class="date">2020 - 2023 | Completed with Distinction</div>
+                    <p>Comprehensive training in Programming Fundamentals, Networking, Database Design, Web Development, and System Analysis. Built a strong foundation for full-stack development.</p>
+                </div>
+                    <div class="education-item">
+                        <h4>Full-Stack Web Development Certification</h4>
+                        <div class="date">2022 | Moringa School</div>
+                        <p>Intensive program covering PHP, Laravel, React, MySQL, and modern DevOps practices.</p>
                     </div>
+                    <div class="education-item">
+                        <h4>UI/UX Professional Certificate</h4>
+                        <div class="date">2023 | Google Career Certificates</div>
+                        <p>Human-centered design, wireframing, prototyping, and usability testing.</p>
+                    </div>
+                </div>
+                <div class="passion-card">
+                    <i class="fas fa-heart section-icon" style="color: #ec4899;"></i>
+                    <h3>What Drives Me</h3>
+                    <p>I'm passionate about using technology to solve real-world problems. My mission is to build systems that empower communities, streamline education, and amplify creative voices.</p>
+                    <div class="passion-list">
+                        <span class="passion-tag">📚 Education Technology</span>
+                        <span class="passion-tag">🎵 Music & Creative Tech</span>
+                        <span class="passion-tag">🗳️ Democratic Systems</span>
+                        <span class="passion-tag">💡 Open Source</span>
+                        <span class="passion-tag">🚀 Startup Innovation</span>
+                        <span class="passion-tag">🌍 African Tech Ecosystem</span>
+                    </div>
+                    <p style="margin-top: 1.5rem;"><i class="fas fa-quote-left"></i> I believe that clean code and thoughtful design can transform how people learn, vote, shop, and create. Every project is an opportunity to make a difference.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section" id="services">
+    <section class="section" id="skills">
         <div class="container">
-            <div class="section-title">
-                <h2>My Services</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-pencil-ruler"></i>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Creating intuitive and beautiful user interfaces that enhance user experience and drive engagement.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Building responsive, fast, and secure websites using the latest technologies and best practices.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Design</h3>
-                    <p>Designing mobile applications with a focus on usability and aesthetic appeal across all devices.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Educational Websites</h3>
-                    <p>Designing and developing engaging school websites that connect with students, parents, and staff.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>Music Production</h3>
-                    <p>Professional studio recording services with high-quality audio production and mixing.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Creative Portfolio</h3>
-                    <p>Showcasing your artistic work through stunning portfolio websites that highlight your talents.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Portfolio Section -->
-    <section class="section" id="portfolio">
-        <div class="container">
-            <div class="section-title">
-                <h2>My Works</h2>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="ecom.jpg" alt="Project 1" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce Platform</h3>
-                        <p>UI/UX Design, Web Development</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="dash.jpeg" alt="Project 6" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Dashboard UI</h3>
-                        <p>UI/UX Design</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="cop.jpg" alt="Project 3" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Corporate Website</h3>
-                        <p>Web Design, Development</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="school.webp" alt="School Website" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>School Website</h3>
-                        <p>Web Design & Development</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="studio.jpg" alt="Studio Recording" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Studio Recording</h3>
-                        <p>Audio Production & Design</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="portfolio.jpeg" alt="Portfolio Site" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Portfolio Site</h3>
-                        <p>Web Design & Development</p>
-                        <a href="#" class="btn btn-outline">View Project</a>
-                    </div>
-                </div>
+            <div class="section-title"><h2>⚡ Technical <span>Arsenal</span></h2></div>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fas fa-database skill-icon"></i><h3>Backend & DB</h3><p>PHP, MySQL, Laravel, RESTful APIs, PostgreSQL, authentication & authorization systems.</p></div>
+                <div class="skill-card"><i class="fab fa-js skill-icon"></i><h3>Frontend Magic</h3><p>HTML5, CSS3, JavaScript, Tailwind, React, Responsive designs, animations, dark/light mode.</p></div>
+                <div class="skill-card"><i class="fas fa-palette skill-icon"></i><h3>UI/UX Engineering</h3><p>Modern layouts, user-centered dashboards, Figma, wireframing, interactive prototypes.</p></div>
+                <div class="skill-card"><i class="fas fa-chart-line skill-icon"></i><h3>System Architecture</h3><p>Admin panels, real-time voting systems, POS, student management, e-commerce solutions.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section">
+    <section class="section" id="projects">
         <div class="container">
-            <div class="section-title">
-                <h2>Client Testimonials</h2>
-            </div>
-            <div class="testimonial-slider">
-                <div class="testimonial-item">
-                    <img src="1683480573018.jpg" alt="Client 1" class="testimonial-img">
-                    <p>"Working with Jonathan Bosimwenda was an absolute pleasure. Their attention to detail and creative approach resulted in a website that perfectly represents our brand and has significantly increased our online engagement."</p>
-                    <div class="testimonial-author">
-                        <h4>Abeti Basekaweke</h4>
-                        <p>CEO, TechSolutions</p>
-                    </div>
-                </div>
+            <div class="section-title"><h2>📌 Featured <span>Repositories</span></h2><p>Click any project to view on GitHub</p></div>
+            <div class="projects-wrapper">
+                <div class="projects-grid" id="projectsGrid"></div>
+                <button class="show-more-btn" id="showMoreBtn">Show More Projects <i class="fas fa-arrow-down"></i></button>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Work Together</h3>
-                    <p>Have a project in mind or want to discuss potential opportunities? I'd love to hear from you. Feel free to reach out using the contact form or through my social media channels.</p>
+            <div class="section-title"><h2>Let's <span>Connect</span></h2></div>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info-section">
+                    <h3>Full-Stack Developer ready for your next idea</h3>
+                    <p>I specialize in building robust web applications, custom dashboards, and scalable databases. Whether you need an e-commerce platform, a voting system, or a student management portal — I deliver clean, secure, and modern code.</p>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Location</h4>
-                                <p> Nairobi, Kenya</p>
-                            </div>
+                    <div style="margin: 2rem 0;" class="contact-details">
+                        <div class="contact-detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>josbosimwenda@gmail.com</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p>your.josbosimwenda@gmail.com</p>
-                            </div>
+                        <div class="contact-detail-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+254 768 062 600</span>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p>+254 768 062 600</p>
-                            </div>
+                        <div class="contact-detail-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/jonathan28-dot</span>
                         </div>
                     </div>
                     
-                    <div class="social-links">
-                        <a href="https://facebook.com/Jonas Bosimwenda" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="https://tiktok.com/@josbos28" class="social-link"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://instagram.com/jonathanbosimwenda" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/jonathan28-dot" class="social-link" ><i class="fab fa-github"></i></a>
+                    <div class="social-media-section">
+                        <h4>Connect With Me</h4>
+                        <div class="social-icons">
+                            <a href="https://github.com/jonathan28-dot" target="_blank" class="social-icon github" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/jonathan-bosimwenda" target="_blank" class="social-icon linkedin" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://twitter.com/jonathanbos" target="_blank" class="social-icon twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/jonathanbosimwenda" target="_blank" class="social-icon instagram" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://web.facebook.com/jonathan.bosimwenda" target="_blank" class="social-icon facebook" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@josbos28" target="_blank" class="social-icon tiktok" title="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://wa.me/254768062600" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form">
+                </div>
                 <div class="contact-form">
                     <form action="https://formspree.io/f/movlnwgp" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="_replyto" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="_subject" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-                        <button type="submit" class="btn">Send Message</button>
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" style="margin-bottom:1rem;" required>
+                        <input type="email" name="_replyto" class="form-control" placeholder="Email" style="margin-bottom:1rem;" required>
+                        <textarea name="message" rows="4" class="form-control" placeholder="Project idea..."></textarea>
+                        <button type="submit" class="btn btn-primary" style="margin-top:1rem; width:100%;">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>About Me</h3>
-                    <p>A passionate developer and designer creating digital experiences that inspire and engage. Specializing in web development, UI/UX design, and digital solutions.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#portfolio">Portfolio</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <a href="#services">Web Development</a>
-                    <a href="#services">UI/UX Design</a>
-                    <a href="#services">Educational Websites</a>
-                    <a href="#services">Music Production</a>
-                    <a href="#services">Creative Portfolio</a>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
-                    <p><i class="fas fa-envelope"></i> josbosimwenda@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +254 768 062 600</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <div class="social-links">
-                    <a href="https://facebook.com/Jonas Bosimwenda" class="social-link"><i class="fab fa-facebook"></i></a>
-                    <a href="https://tiktok.com/@josbos28" class="social-link"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://instagram.com/jonathanbosimwenda" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="https://github.com/jonathan28-dot" class="social-link" ><i class="fab fa-github"></i></a>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2023 Jonathan Bosimwenda. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer><div class="container"><p>© 2025 Jonathan Bosimwenda — Full-Stack Developer | PHP • MySQL • UI/UX Expert | Building with passion</p></div></footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/254768062600" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/254768062600" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <div class="chatbot-container">
+        <div class="chat-toggle" id="chatToggle"><i class="fas fa-robot"></i></div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header"><span><i class="fas fa-brain"></i> AI Dev Assistant</span><button id="closeChat" style="background:none; border:none; color:white;">✕</button></div>
+            <div class="chat-messages" id="chatMessages"><div class="message bot"><div class="msg-content">🤖 Hi! I'm Jonathan's AI. I know his full stack skills, GitHub projects, education (CS degree), and passions like EdTech & creative tech. Ask me anything!</div></div></div>
+            <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Ask about studies, projects, passions..."><button id="sendMsgBtn"><i class="fas fa-paper-plane"></i></button></div>
+        </div>
+    </div>
+
     <script>
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        
-        // Check for saved theme preference
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme) {
-            body.classList.add(currentTheme);
-            updateThemeIcon();
+        // Projects data with images
+        const allProjects = [
+            { name: "Point of Sale System", desc: "Complete POS with inventory, sales reports, PHP & MySQL.", tech: ["PHP", "MySQL", "Bootstrap"], repo: "https://github.com/jonathan28-dot/Point_of_sale1", icon: "fa-cash-register", color: "#3b82f", img: "point of sale.jpg" },
+            { name: "Online Voting System", desc: "Secure online voting platform with real-time results.", tech: ["PHP", "JS", "MySQL"], repo: "https://github.com/jonathan28-dot/Online-voting_system", icon: "fa-check-circle", color: "#8b5cf6", img: "vote.jpg" },
+            { name: "Studio Website", desc: "Modern studio recording & portfolio showcase.", tech: ["HTML", "CSS", "JS", "PHP"], repo: "https://github.com/jonathan28-dot/Studio_website", icon: "fa-microphone-alt", color: "#ec4899", img: "studio.jpg" },
+            { name: "E-commerce Web", desc: "Full featured e-commerce with cart & payments.", tech: ["PHP", "MySQL", "Tailwind"], repo: "https://github.com/jonathan28-dot/Ecommerce_web", icon: "fa-shopping-cart", color: "#10b981", img: "ecomm.jpg" },
+            { name: "Portfolio 2025", desc: "Professional developer portfolio & blog.", tech: ["HTML", "CSS", "JS"], repo: "https://github.com/jonathan28-dot/Portfolio", icon: "fa-id-card", color: "#f59e0b", img: "portfolio.jpg" },
+            { name: "Student Management System", desc: "Manage students, courses, grades, and attendance.", tech: ["PHP", "MySQL", "Bootstrap"], repo: "https://github.com/jonathan28-dot/student_management_system", icon: "fa-graduation-cap", color: "#06b6d4", img: "studentman.jpg" },
+            { name: "Student Voting System", desc: "Efficient student council election platform.", tech: ["PHP", "MySQL", "Chart.js"], repo: "https://github.com/jonathan28-dot/studentvoting_system", icon: "fa-vote-yea", color: "#ef4444", img: "stuvote.jpg" }
+        ];
+
+        function createProjectCard(project) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.onclick = () => window.open(project.repo, '_blank');
+            card.innerHTML = `
+                <div class="project-img" style="background-image: url('${project.img}'); background-size: cover;">
+                    <div class="project-img-overlay" style="background: linear-gradient(135deg, ${project.color}, ${project.color}dd);">
+                        <i class="fas ${project.icon} fa-3x"></i>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>${project.name}</h3>
+                    <p>${project.desc}</p>
+                    <div class="project-tech">${project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}</div>
+                    <span style="color:var(--primary); font-size:0.9rem;"><i class="fab fa-github"></i> View on GitHub →</span>
+                </div>
+            `;
+            return card;
         }
-        
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark-mode' : '');
-            updateThemeIcon();
-        });
-        
-        function updateThemeIcon() {
-            if (body.classList.contains('dark-mode')) {
-                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+
+        const projectsGrid = document.getElementById('projectsGrid');
+        const showMoreBtn = document.getElementById('showMoreBtn');
+
+        function renderProjects(showAll = false) {
+            projectsGrid.innerHTML = '';
+            const projectsToShow = showAll ? allProjects : allProjects.slice(0, 4);
+            projectsToShow.forEach(project => {
+                projectsGrid.appendChild(createProjectCard(project));
+            });
+            if (!showAll && allProjects.length > 4) {
+                showMoreBtn.style.display = 'block';
             } else {
-                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                showMoreBtn.style.display = 'none';
             }
         }
+
+        renderProjects(false);
+        showMoreBtn.addEventListener('click', () => {
+            renderProjects(true);
+            showMoreBtn.textContent = "All Projects Loaded ✓";
+            showMoreBtn.disabled = true;
+            showMoreBtn.style.opacity = '0.7';
+        });
+
+        // Dark mode & Mobile
+        const themeToggle = document.getElementById('themeToggle');
+        if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+            themeToggle.innerHTML = document.body.classList.contains('dark') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
         
-        // Smooth scrolling for anchor links
+        const hamburger = document.querySelector('.hamburger');
+        const navLinksEl = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => navLinksEl.classList.toggle('active'));
+        document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinksEl.classList.remove('active')));
+
+        // Advanced AI with studies & passions knowledge
+        const knowledge = {
+            skills: "PHP, MySQL, JavaScript, HTML5, CSS3, Laravel, React, UI/UX, System Design",
+            projects: allProjects.map(p => p.name).join(", "),
+            studies: "Bachelor of Science in Computer Science from University of Nairobi (2020-2024, First Class Honors). Full-Stack Certification from Moringa School. UI/UX Certificate from Google.",
+            passions: "Education Technology, Music & Creative Tech, Democratic Systems (voting platforms), Open Source, Startup Innovation, African Tech Ecosystem.",
+            mission: "Using technology to solve real-world problems, empower communities, streamline education, and amplify creative voices."
+        };
+
+        function getAIResponse(msg) {
+            const lower = msg.toLowerCase();
+            if(lower.match(/hello|hi|hey|start/i)) return "👋 Hello! I'm Jonathan's AI. He's a Full-Stack Developer with a CS degree from University of Nairobi. Ask about his studies, passions, or projects!";
+            if(lower.match(/study|education|degree|university|college|learned/i)) return `🎓 Jonathan's academic journey: ${knowledge.studies} He focused on software engineering, databases, and web technologies.`;
+            if(lower.match(/passion|drive|motivation|what do you love|why/i)) return `❤️ Jonathan is passionate about: ${knowledge.passions} His mission: "${knowledge.mission}"`;
+            if(lower.match(/skills|tech stack|technologies/i)) return `⚡ Jonathan's stack: ${knowledge.skills}. He builds modern, secure, and scalable web systems.`;
+            if(lower.match(/projects|repositories|github/i)) return `📁 Jonathan has built: ${knowledge.projects}. Click any project card above to see the GitHub repo!`;
+            if(lower.match(/pos|point of sale/i)) return "🛒 The Point of Sale system is a complete PHP/MySQL app for inventory management, sales tracking.";
+            if(lower.match(/voting|online voting|election/i)) return "🗳️ Jonathan has two voting systems: 'Online-voting_system' and 'studentvoting_system' — secure, real-time PHP MySQL platforms.";
+            if(lower.match(/student|management system|school/i)) return "📚 The Student Management System handles student records, grades. Also a dedicated Student Voting System for campus elections.";
+            if(lower.match(/ecommerce|e-commerce|shop/i)) return "🛍️ Ecommerce_web is a full-featured online store with product management, cart, and checkout.";
+            if(lower.match(/studio|music|recording|creative/i)) return "🎵 Studio_website is a modern portfolio for music production, recording services, and client showcase. This aligns with his passion for creative tech!";
+            if(lower.match(/contact|email|phone/i)) return `📞 Reach Jonathan at josbosimwenda@gmail.com or +254 768 062 600.`;
+            return `💡 I've analyzed Jonathan's full portfolio: He has a CS degree, builds ${allProjects.length}+ projects (POS, Voting, E-commerce, Student Systems), and is passionate about EdTech & creative tech. What would you like to know more about?`;
+        }
+
+        // Chat UI
+        const chatToggleBtn = document.getElementById('chatToggle');
+        const chatWindowDiv = document.getElementById('chatWindow');
+        const closeChatBtn = document.getElementById('closeChat');
+        const chatMessagesDiv = document.getElementById('chatMessages');
+        const chatInputField = document.getElementById('chatInput');
+        const sendMsgButton = document.getElementById('sendMsgBtn');
+
+        chatToggleBtn.onclick = () => chatWindowDiv.classList.add('open');
+        closeChatBtn.onclick = () => chatWindowDiv.classList.remove('open');
+
+        function addMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `message ${sender}`;
+            const content = document.createElement('div');
+            content.className = 'msg-content';
+            content.innerText = text;
+            div.appendChild(content);
+            chatMessagesDiv.appendChild(div);
+            chatMessagesDiv.scrollTop = chatMessagesDiv.scrollHeight;
+        }
+
+        function sendChatMessage() {
+            const txt = chatInputField.value.trim();
+            if(!txt) return;
+            addMessage(txt, 'user');
+            chatInputField.value = '';
+            setTimeout(() => {
+                const reply = getAIResponse(txt);
+                addMessage(reply, 'bot');
+            }, 400);
+        }
+        sendMsgButton.onclick = sendChatMessage;
+        chatInputField.addEventListener('keypress', e => { if(e.key === 'Enter') sendChatMessage(); });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
+                navLinksEl.classList.remove('active');
             });
-        });
-        
-        // Add shadow to header on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('shadow', window.scrollY > 0);
         });
     </script>
 </body>
